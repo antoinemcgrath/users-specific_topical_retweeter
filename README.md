@@ -13,3 +13,6 @@ python3 ~/.GITS/username_tweet_fetch/get_tweets.py ~/.GITS/username_tweet_fetch/
 
 Will cause your API associate twitter account to start retweeting.
 A list of tweets scanned (and retweeted if positive for your keywords) will be appended to tweet_id_cachelist.txt this list will prevent the script from rescanning and retweeting those tweets the next time you run the script.
+
+THANK YOU Sunglight Foundation and Sunlight labs for the seed list of congressmembers twitter accounts: http://politwoops.sunlightfoundation.com/
+It was used to start the list representatives_twitter_accounts.txt additional campagin accounts and congressional candidate accounts have been added to the list.
