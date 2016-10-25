@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #INITIAL CODE MADE BY GITLAURA: https://github.com/gitlaura/get_tweets/blob/master/get_tweets.py
-#cd /Users/macbook/.GITS/username_tweet_fetch/
-#python3 ~/.GITS/username_tweet_fetch/get_tweets.py ~/.GITS/username_tweet_fetch/name_list.txt
-#python3 ~/.GITS/username_tweet_fetch/get_tweets.py ~/.GITS/username_tweet_fetch/representatives_twitter_accounts.txt
+#cd /Users/macbook/.GITS/users-specific_topical_retweeter/
+#python3 ~/.GITS/users-specific_topical_retweeter/get_tweets.py ~/.GITS/users-specific_topical_retweeter/name_list.txt
+#python3 ~/.GITS/users-specific_topical_retweeter/get_tweets.py ~/.GITS/users-specific_topical_retweeter/representatives_twitter_accounts.txt
 
 import sys
 import os
@@ -57,19 +57,21 @@ def get_tweets(username):
                     #print ("tweetid == id on line,return triggered")
                     if ("climate change" or "Climate change" or "Climate Change" or "Global Warming" or "global warming" or "globalwarming" or "climate" or "climatechange" or "GlobalWarming" or "Climate" or "climatechange") in str(tweet.text.encode("utf-8")):
 #                    if ("CRS" or "crs") in str(tweet.text.encode("utf-8")):
-                        print ("Keyword(s) found tweet has been added to retweet_list.txt")
-                        user = username.replace('\n', '').replace('\r', '')
+                        if not ("RT @") in str(tweet.text.encode("utf-8")):
 
-                        #Preserve tweet link in word doc
-                        tweetable = "https://twitter.com/"+user+"/status/"+tweet.id_str + "\n"
-                        print(tweet.text.encode("utf-8"))
-                        print(tweetable)
-                        with open("retweet_list.txt", 'a') as retweetfile:
-                            retweetfile.write(tweetable)
+                            print ("Keyword(s) found tweet has been added to retweet_list.txt")
+                            user = username.replace('\n', '').replace('\r', '')
 
-                        #reTweet from account owner of the used API keys
-                        tweetthis = api.retweet(tweet.id_str)
-                        print ("Tweeted: " + tweetable)
+                            #Preserve tweet link in word doc
+                            tweetable = "https://twitter.com/"+user+"/status/"+tweet.id_str + "\n"
+                            #print(tweet.text.encode("utf-8"))
+                            #print(tweetable)
+                            with open("retweet_list.txt", 'a') as retweetfile:
+                                retweetfile.write(tweetable)
+
+                            #reTweet from account owner of the used API keys
+                            tweetthis = api.retweet(tweet.id_str)
+                            print ("Tweeted: " + tweetable)
 
 
             if result != -1:
@@ -77,7 +79,7 @@ def get_tweets(username):
                 pass
 
 # When executing script the final argument provided must be a list of twitter accounts
-# EXAMPLE "name_list.txt" in: python3 ~/.GITS/username_tweet_fetch/get_tweets.py ~/.GITS/username_tweet_fetch/name_list.txt
+# EXAMPLE "name_list.txt" in: python3 ~/.GITS/users-specific_topical_retweeter/get_tweets.py ~/.GITS/users-specific_topical_retweeter/name_list.txt
 with open(sys.argv[1], 'r') as userfile:
     userlist = userfile.read().splitlines()
 
