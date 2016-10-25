@@ -25,7 +25,7 @@ git clone git@github.com:antoinemcgrath/users-specific_topical_retweeter.git
 open ~/.GITS/users-specific_topical_retweeter
 
 You can now execute the retweeter script with:
-python3 ~/.GITS/username_tweet_fetch/get_tweets.py ~/.GITS/username_tweet_fetch/representatives_twitter_accounts.txt
+python3 ~/.GITS/users-specific_topical_retweeter/get_tweets.py ~/.GITS/users-specific_topical_retweeter/representatives_twitter_accounts.txt
 ATTENTION:: It is by defualt set to search the twitter accounts of congressional candidates for tweets on climate change.
 ATTENTION:: Change the Climate Change related words in "get_tweets.py" to your words of interest, and modify the input representatives_twitter_accounts.txt account watch list to accounts you are interested in.
 ###

@@ -9,7 +9,7 @@ The arguments are:
 python3 get_tweets.py list_of_twitter_accounts.txt
 
 For example:
-python3 ~/.GITS/username_tweet_fetch/get_tweets.py ~/.GITS/username_tweet_fetch/representatives_twitter_accounts.txt
+python3 ~/.GITS/users-specific_topical_retweeter/get_tweets.py ~/.GITS/users-specific_topical_retweeter/representatives_twitter_accounts.txt
 
 Will cause your API associate twitter account to start retweeting.
 A list of tweets scanned (and retweeted if positive for your keywords) will be appended to tweet_id_cachelist.txt this list will prevent the script from rescanning and retweeting those tweets the next time you run the script.
