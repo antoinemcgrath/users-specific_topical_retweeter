@@ -20,4 +20,12 @@ your consumer api-key, api-secret, access token, access token secret
 sDeEgusz2SyWHIXfafvZtRH78,oNtSKiDBPBS8Nrqy2EppJXFv1TBlXKU2l0yz3ebFf2V1xvQDSX,3233342435-L4vxeAJIuRdKyUKw0hSPz8XSzzLe3g9DrHoHJN4,cILYrlCooBsVFZJ291uxjUa0KpbNQlucc27B3KpwevKpx
 
 mkdir ~/.GITS
-open ~/.GITS
+cd ~/.GITS
+git clone git@github.com:antoinemcgrath/users-specific_topical_retweeter.git
+open ~/.GITS/users-specific_topical_retweeter
+
+You can now execute the retweeter script with:
+python3 ~/.GITS/username_tweet_fetch/get_tweets.py ~/.GITS/username_tweet_fetch/representatives_twitter_accounts.txt
+ATTENTION:: It is by defualt set to search the twitter accounts of congressional candidates for tweets on climate change.
+ATTENTION:: Change the Climate Change related words in "get_tweets.py" to your words of interest, and modify the input representatives_twitter_accounts.txt account watch list to accounts you are interested in.
+###
