@@ -17,7 +17,7 @@ twitterKEYfile = os.path.expanduser('~') + "/.invisible/twitter02.csv" # climate
 with open(twitterKEYfile, 'r') as f:
     e = f.read()
     keys = e.split(',')
-    print(keys)
+    #print(keys)
     consumer_key = keys[0]  #consumer_key
     consumer_secret = keys[1]  #consumer_secret
     access_key = keys[2]  #access_key
