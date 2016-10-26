@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-#INITIAL CODE MADE BY GITLAURA: https://github.com/gitlaura/get_tweets/blob/master/get_tweets.py
+# PROPOSED BY THE BRAIN OF Gennie https://github.com/gegebhart
+# BUILT ON TWEEPY CODE POSTED BY GITLAURA: https://github.com/gitlaura/get_tweets/blob/master/get_tweets.py
+
 #cd /Users/macbook/.GITS/users-specific_topical_retweeter/
 #python3 ~/.GITS/users-specific_topical_retweeter/get_tweets.py ~/.GITS/users-specific_topical_retweeter/name_list.txt
 #python3 ~/.GITS/users-specific_topical_retweeter/get_tweets.py ~/.GITS/users-specific_topical_retweeter/representatives_twitter_accounts.txt
