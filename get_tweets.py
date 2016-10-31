@@ -7,13 +7,18 @@
 #python3 ~/.GITS/users-specific_topical_retweeter/get_tweets.py ~/.GITS/users-specific_topical_retweeter/name_list.txt
 #python3 ~/.GITS/users-specific_topical_retweeter/get_tweets.py ~/.GITS/users-specific_topical_retweeter/representatives_twitter_accounts.txt
 
+# 2do # Create crontab regular execution of script http://www.computerhope.com/unix/ucrontab.htm
+# 2do # Automate the switch from initial run of 200 tweets to maintenance 20 tweet reruns
+# 2do # Reduce tweet list file automatically
+
 import sys
 import os
 import tweepy #http://www.tweepy.org/
 
 #twitterKEYfile = os.path.expanduser('~') + "/.invisible/twitter01.csv" # crsreports.com
 twitterKEYfile = os.path.expanduser('~') + "/.invisible/twitter02.csv" # climatecongress.info
-
+#number = 200 #initial run
+number = 20 #reruns
 
 # Retrieve Twitter API credentials
 with open(twitterKEYfile, 'r') as f:
@@ -34,7 +39,7 @@ api = tweepy.API(auth)
 def get_tweets(username):
 
     #set count to however many tweets you want; twitter only allows 200 at once
-    number_of_tweets = 200
+    number_of_tweets = number
 
     #get tweets
     tweets = api.user_timeline(screen_name = username,count = number_of_tweets)
