@@ -95,7 +95,16 @@ with open(sys.argv[1], 'r') as userfile:
         try:
             get_tweets(username)
             print ("Updated: " + username)
-        except:
-            print (tweepy.error.TweepError)
+        ##except:
+        # #   print (tweepy.error.TweepError)
         #except subprocess.CalledProcessError as exc:
-            print ('error: code={}, out="{}"')
+        ##    print ('error: code={}, out="{}"')
+        ##    print ("https://twitter.com/" + username)
+        except tweepy.TweepError as e:
+
+            if e.api_code == 34:
+                print ("error   The account does not exist: https://twitter.com/" + username)
+            else:
+                print ("Tweepy error code: " + str(e.api_code) + "  " + str(tweepy.error.TweepError))
+                print ("https://twitter.com/" + username)
+                pass
