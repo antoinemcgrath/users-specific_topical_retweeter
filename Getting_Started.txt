@@ -24,6 +24,11 @@ cd ~/.GITS
 git clone git@github.com:antoinemcgrath/users-specific_topical_retweeter.git
 open ~/.GITS/users-specific_topical_retweeter
 
+If you do not have tweepy installed:
+pip install tweepy
+If the tweepy install fails bc you do not have pip installed, then first install pip:
+sudo apt-get install python-pip
+
 You can now execute the retweeter script with:
 python3 ~/.GITS/users-specific_topical_retweeter/get_tweets.py ~/.GITS/users-specific_topical_retweeter/representatives_twitter_accounts.txt
 ATTENTION:: It is by defualt set to search the twitter accounts of congressional candidates for tweets on climate change.

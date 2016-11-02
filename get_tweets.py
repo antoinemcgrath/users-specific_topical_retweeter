@@ -17,8 +17,8 @@ import tweepy #http://www.tweepy.org/
 
 #twitterKEYfile = os.path.expanduser('~') + "/.invisible/twitter01.csv" # crsreports.com
 twitterKEYfile = os.path.expanduser('~') + "/.invisible/twitter02.csv" # climatecongress.info
-#number = 200 #initial run
-number = 20 #reruns
+number = 200 #initial run
+#number = 20 #reruns
 
 # Retrieve Twitter API credentials
 with open(twitterKEYfile, 'r') as f:
@@ -101,10 +101,15 @@ with open(sys.argv[1], 'r') as userfile:
         ##    print ('error: code={}, out="{}"')
         ##    print ("https://twitter.com/" + username)
         except tweepy.TweepError as e:
+            if str(e.reason) == "[{'message': 'Rate limit exceeded', 'code': 88}]":
+                print ("Twitter rate limit exceeded pausing for 1 hr")
+                import time
+                time.sleep(3601)
 
             if e.api_code == 34:
                 print ("error   The account does not exist: https://twitter.com/" + username)
             else:
                 print ("Tweepy error code: " + str(e.api_code) + "  " + str(tweepy.error.TweepError))
+                print (e.reason)
                 print ("https://twitter.com/" + username)
                 pass
