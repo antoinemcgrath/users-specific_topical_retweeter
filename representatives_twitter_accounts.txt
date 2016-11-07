@@ -1128,7 +1128,6 @@ Vic4CO4
 micaforcongress
 MikeHMichaud
 Michaud2014
-JoeMiklosi4CD6
 SenatorBarb
 RepGaryMiller
 CandiceMiller
@@ -1142,8 +1141,6 @@ millermeeks
 StewartMillsMN
 mills4ms
 MilneForVT
-Minor2014
-Misiuk4Congress
 MitchumCA24
 shayanmodarres
 RepMoolenaar
@@ -1200,7 +1197,6 @@ KristiNoem
 RickNolanMN
 USRepRickNolan
 DonNorcross4NJ
-DonNorcrossNJ1
 RepRichNugent
 Nugent4Congress
 DevinNunes
@@ -1216,17 +1212,14 @@ RepBetoORourke
 BarackObama
 obamainaugural
 POTUS
-Obermueller2012
 ObermuellerMike
 Oberweis2014
 JohnOceguera
 phil_oliva
 RepPeteOlson
 PeteOlson
-orange4mayor
 OrmanForSenate
 JulianneOrtman
-osbornforsenate
 DougOse
 ButchOtter
 OtterforIdaho
@@ -1290,7 +1283,6 @@ collinpeterson
 pedropierluisi
 KatrinaPierson
 chelliepingree
-Pires4USSenate
 RobertPittenger
 reppittenger
 RepJoePitts
@@ -1338,7 +1330,6 @@ BruceRauner
 GovRauner
 Thomasravenel
 Read4Congress
-RecchiaCongress
 DomenicRecchia
 TomReedCongress
 RepTomReed
@@ -1346,7 +1337,6 @@ SenJackReed
 KReed4Congress
 Brian4Georgia
 DennyRehberg
-Rehberg2012
 davereichert
 TeamReichert
 SenatorReid
@@ -1366,7 +1356,6 @@ RepTomRice
 KathleenRice
 RepKathleenRice
 senatornanrich
-RepLRichardson
 DRichardsonOR
 RepRichmond
 CedricRichmond
@@ -1414,7 +1403,6 @@ RosLehtinenCamp
 PeterRoskam
 brentroske
 RepDennisRoss
-RepMikeRoss
 electdennisross
 MikeRossUpdates
 VoteHenryRoss
@@ -1439,7 +1427,6 @@ Call_Me_Dutch
 RepBobbyRush
 BobbyLRushMC
 SteveRussellOK
-USRepRussell
 RepTimRyan
 SpeakerRyan
 PRyan
@@ -1475,7 +1462,6 @@ EricSchertzing
 RepAdamSchiff
 28thDistrict
 RepSchilling
-reelectbobby
 Schlesinger4FL
 Schneider4IL10
 RepSchneider
@@ -1500,9 +1486,7 @@ ScottforFlorida
 BobbyScott4VA3
 ScottForGA
 EScottWA
-NoMoore2012
 DanSebring
-DavidSecor2012
 seifertmn
 DarleneSenger
 JimPressOffice
@@ -1555,7 +1539,6 @@ BryanSmithID2
 RepJasonSmith
 RepChrisSmith
 SmithTootie
-GloreathaSmith
 TexansforLamar
 SenatorSnowe
 OlympiasList
@@ -1603,7 +1586,6 @@ RepSwalwell
 hswint
 Vote4Tacherra
 MikeTagert
-TajforCongress
 MarkTakai
 RepMarkTakai
 MarkTakano
@@ -1611,8 +1593,6 @@ RepMarkTakano
 ttancredo
 AbelJTapia
 DannyTarkanian
-AngelForRI
-Taylor4USSenate
 Scotttaylorva
 ZephyrTeachout
 AnnetteTeijeiro
@@ -1620,7 +1600,6 @@ NatalieTennant
 NatalieforWV
 claudiatenney
 LEETERRYNE
-voteterry
 jontester
 SenatorTester
 CongressmanGT
@@ -1638,7 +1617,6 @@ johnthune
 PatTiberi
 TeamTiberi
 RepTierney
-johntierney_MA
 TilghmanForMD
 ThomTillis
 SenThomTillis
@@ -1682,7 +1660,6 @@ dgvaladao
 RepDavidValadao
 ChrisVanHollen
 KimVannCongress
-Vargas4Congress
 RepJuanVargas
 MarcVeasey
 RepVeasey
@@ -1712,7 +1689,6 @@ walkerforakgov
 AkGovBillWalker
 ScottWalker
 RepMarkWalker
-WallForCongress
 jackiewalorski
 StandWithJackie
 RepWalorski
@@ -1734,7 +1710,6 @@ DWStweets
 RepDWStweets
 MaxineWaters
 waterscampaign
-RepBWColeman
 Bonnie4Congress
 MelWattNC12
 WaxmanClimate
@@ -1764,7 +1739,6 @@ Westlund4WI
 RepWestmoreland
 WestmorelandGA
 TorreyWestrom
-WheelerCampaign
 BrianDWhelan
 SenWhitehouse
 RepEdWhitfield
