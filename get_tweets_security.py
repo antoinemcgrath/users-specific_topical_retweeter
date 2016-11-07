@@ -15,8 +15,7 @@ import sys
 import os
 import tweepy #http://www.tweepy.org/
 
-twitterKEYfile = os.path.expanduser('~') + "/.invisible/twitter01.csv" # crsreports.com
-#twitterKEYfile = os.path.expanduser('~') + "/.invisible/twitter02.csv" # climatecongress.info
+twitterKEYfile = os.path.expanduser('~') + "/.invisible/twitter01.csv"
 number = 200 #initial run
 #number = 20 #reruns
 
@@ -35,10 +34,10 @@ auth.set_access_token(access_key, access_secret)
 api = tweepy.API(auth)
 
 
-#method to get a user's last 100 ?200 tweets
+#method to get a user's last # tweets
 def get_tweets(username):
 
-    #set count to however many tweets you want; twitter only allows 200 at once
+    #set count to however many tweets you want; twitter only allows max 200 at once
     number_of_tweets = number
 
     #get tweets
@@ -81,8 +80,9 @@ def get_tweets(username):
 						"Rule41" or 
 						"surveillance" or 
 						"stingray" or 
-						"PATRIOT Act") in str(tweet.text.encode("utf-8")):
-#                    if ("CRS" or "crs") in str(tweet.text.encode("utf-8")):
+						"PATRIOT Act"
+						"browserspying") in str(tweet.text.encode("utf-8")):
+
                         if not ("RT @") in str(tweet.text.encode("utf-8")):
 
                             print ("Keyword(s) found tweet has been added to retweet_list.txt")
