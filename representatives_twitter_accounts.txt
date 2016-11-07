@@ -776,7 +776,6 @@ RepHorsford
 WhiteHouse
 senjohnhowe
 howeforcongress
-VoteScottHowell
 WhipHoyer
 StenyHoyer
 NancyHoyt4MD
@@ -843,14 +842,11 @@ RonJohnsonWI
 Jeff4Gov
 SamJohnsonTX03
 ConnieJ4OK
-DavidJollyCD13
 USRepDavidJolly
 RepWalterJones
 cjones
 WalterJones2016
-StarnerJones
 Jim_Jordan
-kirkjorgensen52
 RepDaveJoyce
 DaveJoyceOH14
 timkaine
@@ -862,7 +858,6 @@ Marcy_Kaptur
 fredkarger
 JohnKasich
 OHPressSec
-John_Katko
 RepJohnKatko
 JoeKaufmanUSA
 kealy4congress
@@ -909,11 +904,9 @@ knight4congress
 SteveKnight25
 Kocher4Senate
 MattKokkonen
-DaveKoller2014
 ColoradoForKopp
 Koster4Congress
 RickKozellFL
-PatKreitlow
 PhilKrinkie
 Dennis_Kucinich
 KultalaForKS
@@ -922,7 +915,6 @@ AnnMcLaneKuster
 RepAnnieKuster
 AdamKwasman
 senjonkyl
-joekyrillos2012
 Raul_Labrador
 RaulLabrador4ID
 JohnLaFerla
@@ -941,7 +933,6 @@ LandryForLA
 jimlangevin
 SenatorLankford
 jameslankford
-Lara4NewMexico
 larsenrick
 RepRickLarsen
 RepJohnLarson
@@ -974,7 +965,6 @@ jlewis4congress
 RetaJoLewis
 mtforlewis
 Jason2CD
-Lieber4Congress
 JoeLieberman
 tedlieu
 RepTedLieu
@@ -1011,7 +1001,6 @@ peopleforben
 RepLujanGrisham
 CynthiaLummis
 RepDanLungren
-Lungren2012
 GovJohnLynch
 RepStephenLynch
 RepLynch
@@ -1026,10 +1015,8 @@ RepConnieMack
 ConnieMackIV
 Rep_BonoMack
 DanMaffeiNY
-RepDanMaffei
 Maher4Congress
 abelmaldonado
-ByronMallott
 GovMalloyOffice
 DanMalloyCT
 CarolynBMaloney
@@ -1041,12 +1028,9 @@ JoeManchinWV
 JoshMandelOhio
 RobManess
 ManessforLA
-donmanzullo
-manzullohq
 mapppotter
 RepKenMarchant
 MarchantforTX24
-NealMarchbanks
 MMargoliesPA
 RepTomMarino
 Marino4Congress
@@ -1068,7 +1052,6 @@ ChipMaxwellNE
 AlMcAffrey
 donnamcaleer
 VanceMcAllister
-RepMcAllister
 Vance4Louisiana
 GovernorVA
 TerryMcAuliffe
