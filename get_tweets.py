@@ -15,10 +15,7 @@ import sys
 import os
 import tweepy #http://www.tweepy.org/
 
-#twitterKEYfile = os.path.expanduser('~') + "/.invisible/twitter01.csv" # crsreports.com
-twitterKEYfile = os.path.expanduser('~') + "/.invisible/twitter02.csv" # climatecongress.info
-number = 200 #initial run
-#number = 20 #reruns
+twitterKEYfile = os.path.expanduser('~') + "/.invisible/twitter01.csv"
 
 # Retrieve Twitter API credentials
 with open(twitterKEYfile, 'r') as f:
@@ -34,11 +31,51 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_key, access_secret)
 api = tweepy.API(auth)
 
+number = 200 #initial run
+#number = 20 #reruns
 
-#method to get a user's last 100 ?200 tweets
+keywords = [#'encrypt',
+			'ncrypt',
+			'crypto', 
+			'going dark',
+			'dark web',
+			#'backdoor', #backdoor amnesty
+			'golden key',
+			#'hack',
+			'hacker', #thackerville
+			'to hack', 
+			'hacking',
+			'hacked', #whacked
+			'hacktiv',
+			'password', 
+			'cyber', 
+			#'censor',
+			#'apple', 
+			'spyware',
+			'malware', 
+			'ransomware',
+			'702',
+			#'NSA', #HOVENSA
+			' NSA', 
+			'#NSA',
+			'Snowden', 
+			'EFF', 
+			'spyware',
+			#'server',
+			'Rule 41',
+			'Rule41',
+			#'virus',
+			'stingray',
+			'surveillance',
+			'PATRIOT Act',
+			'Patriot Act',
+			'USA FREEDOM',
+			'browserspying']
+
+#method to get a user's last # tweets
 def get_tweets(username):
 
-    #set count to however many tweets you want; twitter only allows 200 at once
+    #set count to however many tweets you want; twitter only allows max 200 at once
     number_of_tweets = number
 
     #get tweets
@@ -62,23 +99,24 @@ def get_tweets(username):
                 with open("tweet_id_cachelist.txt", 'a') as cachefile:
                     cachefile.write(tweet.id_str + "\n")
                     #print ("tweetid == id on line,return triggered")
-                    if ("climate change" or "Climate change" or "Climate Change" or "Global Warming" or "global warming" or "globalwarming" or "climate" or "climatechange" or "GlobalWarming" or "Climate" or "climatechange") in str(tweet.text.encode("utf-8")):
-#                    if ("CRS" or "crs") in str(tweet.text.encode("utf-8")):
-                        if not ("RT @") in str(tweet.text.encode("utf-8")):
+                    for word in keywords:
+                        if word in str(tweet.text.encode("utf-8")):
 
-                            print ("Keyword(s) found tweet has been added to retweet_list.txt")
-                            user = username.replace('\n', '').replace('\r', '')
+                            if not ("RT @") in str(tweet.text.encode("utf-8")):
 
-                            #Preserve tweet link in word doc
-                            tweetable = "https://twitter.com/"+user+"/status/"+tweet.id_str + "\n"
-                            #print(tweet.text.encode("utf-8"))
-                            #print(tweetable)
-                            with open("retweet_list.txt", 'a') as retweetfile:
-                                retweetfile.write(tweetable)
+                                print ("Keyword(s) found tweet has been added to retweet_list.txt")
+                                user = username.replace('\n', '').replace('\r', '')
 
-                            #reTweet from account owner of the used API keys
-                            tweetthis = api.retweet(tweet.id_str)
-                            print ("Tweeted: " + tweetable)
+                                #Preserve tweet link in word doc
+                                tweetable = "https://twitter.com/"+user+"/status/"+tweet.id_str + "\n"
+                                #print(tweet.text.encode("utf-8"))
+                                #print(tweetable)
+                                with open("retweet_list.txt", 'a') as retweetfile:
+                                    retweetfile.write(tweetable)
+
+                            	#reTweet from account owner of the used API keys
+                                tweetthis = api.retweet(tweet.id_str)
+                                print ("Tweeted: " + tweetable)
 
 
             if result != -1:
