@@ -11,13 +11,16 @@
 # 2do # Automate the switch from initial run of 200 tweets to maintenance 20 tweet reruns
 # 2do # Reduce tweet list file automatically
 
+# 2do # TEST put RT search first? then...
+	  # search ALL keywords first, then decide whether or not to retweet... +1 for each found work then retweet if >1?
+# 2do # keywords alphabetical. keywords on same line where they are variations of same word
+
 import sys
 import os
 import tweepy #http://www.tweepy.org/
 
-twitterKEYfile = os.path.expanduser('~') + "/.invisible/twitter01.csv"
-
 # Retrieve Twitter API credentials
+twitterKEYfile = os.path.expanduser('~') + "/.invisible/twitter01.csv"
 with open(twitterKEYfile, 'r') as f:
     e = f.read()
     keys = e.split(',')
@@ -31,8 +34,8 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_key, access_secret)
 api = tweepy.API(auth)
 
-number = 200 #initial run
-#number = 20 #reruns
+#number = 200 #initial run
+number = 20 #reruns
 
 keywords = [#'encrypt',
 			'ncrypt',
@@ -40,9 +43,9 @@ keywords = [#'encrypt',
 			'going dark',
 			'dark web',
 			#'backdoor', #backdoor amnesty
-			'golden key',
-			#'hack',
-			'hacker', #thackerville
+			'golden key', #NOTHING
+			#'hack', #shack, shackleton, policy hack
+			'hacker', #thackerville, bushwhacker
 			'to hack', 
 			'hacking',
 			'hacked', #whacked
@@ -55,22 +58,30 @@ keywords = [#'encrypt',
 			'malware', 
 			'ransomware',
 			'702',
-			#'NSA', #HOVENSA
-			' NSA', 
-			'#NSA',
+			#'NSA', #HOVENSA, atkinson, NSAI (a band?)
+			' nsa', 
+			'#nsa',
 			'Snowden', 
-			'EFF', 
+			'eff', 
 			'spyware',
 			#'server',
-			'Rule 41',
-			'Rule41',
+			'rule 41',
+			'rule41',
 			#'virus',
 			'stingray',
 			'surveillance',
-			'PATRIOT Act',
-			'Patriot Act',
-			'USA FREEDOM',
-			'browserspying']
+			'patriot act',
+			'usa freedom',
+			'browserspying',
+			'ddos',
+			'information tech',
+			'device',
+			'internet of things',
+			'iot',
+			'identity theft',
+			'digital',
+			'digitized',
+			'intelligence']
 
 #method to get a user's last # tweets
 def get_tweets(username):
@@ -81,8 +92,6 @@ def get_tweets(username):
     #get tweets
     tweets = api.user_timeline(screen_name = username,count = number_of_tweets)
     ## API.user_timeline([id/user_id/screen_name][, since_id][, max_id][, count][, page])
-    #tweets = api.user_timeline(screen_name = username,count = number_of_tweets)
-
     ## API.update_with_media(filename[, status][, in_reply_to_status_id][, lat][, long][, source][, place_id][, file])
     #API.retweet(id)
 
@@ -95,14 +104,19 @@ def get_tweets(username):
             #print(cachelist)
             #print (result)
             if result == -1:
-#                print ("Tweet ID " +tweet.id_str+ " is being added to cache")
+#                print ("Tweet ID " +tweet.id_str+ " is being added to cache")  
                 with open("tweet_id_cachelist.txt", 'a') as cachefile:
                     cachefile.write(tweet.id_str + "\n")
                     #print ("tweetid == id on line,return triggered")
-                    for word in keywords:
-                        if word in str(tweet.text.encode("utf-8")):
 
-                            if not ("RT @") in str(tweet.text.encode("utf-8")):
+                    # Make tweet all lowercase
+                    raw = tweet.text.encode("utf-8")
+                    text = raw.lower()
+                   
+                    for word in keywords:
+                        if word in text:
+
+                            if not ("RT @") in text:
 
                                 print ("Keyword(s) found tweet has been added to retweet_list.txt")
                                 user = username.replace('\n', '').replace('\r', '')
