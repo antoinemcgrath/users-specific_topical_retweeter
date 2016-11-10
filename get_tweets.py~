@@ -38,7 +38,6 @@ api = tweepy.API(auth)
 number = 20 #reruns
 
 keywords = ['climate change', 'global warming', 'globalwarming', 'climatechange', 'Climate']
-'''
 #keywords = [#'encrypt',
 			'ncrypt',
 			'crypto', 
@@ -84,7 +83,6 @@ keywords = ['climate change', 'global warming', 'globalwarming', 'climatechange'
 			'digital',
 			'digitized',
 			'intelligence']
-'''
 
 #method to get a user's last # tweets
 def get_tweets(username):
