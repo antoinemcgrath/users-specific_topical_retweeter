@@ -110,8 +110,7 @@ def get_tweets(username):
                     #print ("tweetid == id on line,return triggered")
 
                     # Make tweet all lowercase
-                    raw = tweet.text.encode("utf-8")
-                    text = raw.lower()
+                    text = tweet.text.encode("utf-8").lower()
                    
                     for word in keywords:
                         if word in text:
