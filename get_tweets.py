@@ -11,16 +11,16 @@
 # 2do # Automate the switch from initial run of 200 tweets to maintenance 20 tweet reruns
 # 2do # Reduce tweet list file automatically
 
+# 2do # TEST put RT search first? then...
+	  # search ALL keywords first, then decide whether or not to retweet... +1 for each found work then retweet if >1?
+# 2do # keywords alphabetical. keywords on same line where they are variations of same word
+
 import sys
 import os
 import tweepy #http://www.tweepy.org/
 
-#twitterKEYfile = os.path.expanduser('~') + "/.invisible/twitter01.csv" # crsreports.com
-twitterKEYfile = os.path.expanduser('~') + "/.invisible/twitter02.csv" # climatecongress.info
-number = 200 #initial run
-#number = 20 #reruns
-
 # Retrieve Twitter API credentials
+twitterKEYfile = os.path.expanduser('~') + "/.invisible/twitter01.csv"
 with open(twitterKEYfile, 'r') as f:
     e = f.read()
     keys = e.split(',')
@@ -34,18 +34,64 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_key, access_secret)
 api = tweepy.API(auth)
 
+#number = 200 #initial run
+number = 20 #reruns
 
-#method to get a user's last 100 ?200 tweets
+keywords = [#'encrypt',
+			'ncrypt',
+			'crypto', 
+			'going dark',
+			'dark web',
+			#'backdoor', #backdoor amnesty
+			'golden key', #NOTHING
+			#'hack', #shack, shackleton, policy hack
+			'hacker', #thackerville, bushwhacker
+			'to hack', 
+			'hacking',
+			'hacked', #whacked
+			'hacktiv',
+			'password', 
+			'cyber', 
+			#'censor',
+			#'apple', 
+			'spyware',
+			'malware', 
+			'ransomware',
+			'702',
+			#'NSA', #HOVENSA, atkinson, NSAI (a band?)
+			' nsa', 
+			'#nsa',
+			'Snowden', 
+			'eff', 
+			'spyware',
+			#'server',
+			'rule 41',
+			'rule41',
+			#'virus',
+			'stingray',
+			'surveillance',
+			'patriot act',
+			'usa freedom',
+			'browserspying',
+			'ddos',
+			'information tech',
+			'device',
+			'internet of things',
+			'iot',
+			'identity theft',
+			'digital',
+			'digitized',
+			'intelligence']
+
+#method to get a user's last # tweets
 def get_tweets(username):
 
-    #set count to however many tweets you want; twitter only allows 200 at once
+    #set count to however many tweets you want; twitter only allows max 200 at once
     number_of_tweets = number
 
     #get tweets
     tweets = api.user_timeline(screen_name = username,count = number_of_tweets)
     ## API.user_timeline([id/user_id/screen_name][, since_id][, max_id][, count][, page])
-    #tweets = api.user_timeline(screen_name = username,count = number_of_tweets)
-
     ## API.update_with_media(filename[, status][, in_reply_to_status_id][, lat][, long][, source][, place_id][, file])
     #API.retweet(id)
 
@@ -58,27 +104,32 @@ def get_tweets(username):
             #print(cachelist)
             #print (result)
             if result == -1:
-#                print ("Tweet ID " +tweet.id_str+ " is being added to cache")
+#                print ("Tweet ID " +tweet.id_str+ " is being added to cache")  
                 with open("tweet_id_cachelist.txt", 'a') as cachefile:
                     cachefile.write(tweet.id_str + "\n")
                     #print ("tweetid == id on line,return triggered")
-                    if ("climate change" or "Climate change" or "Climate Change" or "Global Warming" or "global warming" or "globalwarming" or "climate" or "climatechange" or "GlobalWarming" or "Climate" or "climatechange") in str(tweet.text.encode("utf-8")):
-#                    if ("CRS" or "crs") in str(tweet.text.encode("utf-8")):
-                        if not ("RT @") in str(tweet.text.encode("utf-8")):
 
-                            print ("Keyword(s) found tweet has been added to retweet_list.txt")
-                            user = username.replace('\n', '').replace('\r', '')
+                    # Make tweet all lowercase
+                    text = tweet.text.encode("utf-8").lower()
+                   
+                    for word in keywords:
+                        if word in text:
 
-                            #Preserve tweet link in word doc
-                            tweetable = "https://twitter.com/"+user+"/status/"+tweet.id_str + "\n"
-                            #print(tweet.text.encode("utf-8"))
-                            #print(tweetable)
-                            with open("retweet_list.txt", 'a') as retweetfile:
-                                retweetfile.write(tweetable)
+                            if not ("RT @") in text:
 
-                            #reTweet from account owner of the used API keys
-                            tweetthis = api.retweet(tweet.id_str)
-                            print ("Tweeted: " + tweetable)
+                                print ("Keyword(s) found tweet has been added to retweet_list.txt")
+                                user = username.replace('\n', '').replace('\r', '')
+
+                                #Preserve tweet link in word doc
+                                tweetable = "https://twitter.com/"+user+"/status/"+tweet.id_str + "\n"
+                                #print(tweet.text.encode("utf-8"))
+                                #print(tweetable)
+                                with open("retweet_list.txt", 'a') as retweetfile:
+                                    retweetfile.write(tweetable)
+
+                            	#reTweet from account owner of the used API keys
+                                tweetthis = api.retweet(tweet.id_str)
+                                print ("Tweeted: " + tweetable)
 
 
             if result != -1:
