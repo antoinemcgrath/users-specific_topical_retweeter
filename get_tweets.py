@@ -15,7 +15,7 @@
       # 2do # inspect why certain rt's were retweeted, for example: https://twitter.com/cat803/status/791877532274470912
 
 # 2do # keywords alphabetical. keywords on same line where they are variations of same word
-
+# 2do # manipulate keywords var to be lowercase so to allow users to enter any case variation
 import sys
 import os
 import tweepy #http://www.tweepy.org/
@@ -41,7 +41,7 @@ number = 200 #reruns
 with open(os.path.expanduser('~') + '/.GITS/users-specific_topical_retweeter/keywords.txt', 'r') as keywordfile:
     keywords = keywordfile.read().splitlines()
 
-##Add your keywords to a new keywords file
+##Add your keywords to a new keywords file in lowercase
 ##Example
 ##To create and edit
 #touch ~/.GITS/users-specific_topical_retweeter/keywords.txt
@@ -50,6 +50,7 @@ with open(os.path.expanduser('~') + '/.GITS/users-specific_topical_retweeter/key
 ##climatechange
 ##climate
 ##globalwarming
+##climate
 
 #method to get a user's last # tweets
 def get_tweets(username):
