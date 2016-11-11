@@ -41,64 +41,15 @@ number = 200 #reruns
 with open(os.path.expanduser('~') + '/.GITS/users-specific_topical_retweeter/keywords.txt', 'r') as keywordfile:
     keywords = keywordfile.read().splitlines()
 
-'''
 ##Add your keywords to a new keywords file
 ##Example
 ##To create and edit
 #touch ~/.GITS/users-specific_topical_retweeter/keywords.txt
 #open ~/.GITS/users-specific_topical_retweeter/keywords.txt
-Then put each word you want to include on its own line
-climatechange
-climate
-globalwarming
-
-
-#keywords = [#'encrypt',
-			'ncrypt',
-			'crypto',
-			'going dark',
-			'dark web',
-			#'backdoor', #backdoor amnesty
-			'golden key', #NOTHING
-			#'hack', #shack, shackleton, policy hack
-			'hacker', #thackerville, bushwhacker
-			'to hack',
-			'hacking',
-			'hacked', #whacked
-			'hacktiv',
-			'password',
-			'cyber',
-			#'censor',
-			#'apple',
-			'spyware',
-			'malware',
-			'ransomware',
-			'702',
-			#'NSA', #HOVENSA, atkinson, NSAI (a band?)
-			' nsa',
-			'#nsa',
-			'Snowden',
-			'eff',
-			'spyware',
-			#'server',
-			'rule 41',
-			'rule41',
-			#'virus',
-			'stingray',
-			'surveillance',
-			'patriot act',
-			'usa freedom',
-			'browserspying',
-			'ddos',
-			'information tech',
-			'device',
-			'internet of things',
-			'iot',
-			'identity theft',
-			'digital',
-			'digitized',
-			'intelligence']
-'''
+##Then put each word you want to include on its own line
+##climatechange
+##climate
+##globalwarming
 
 #method to get a user's last # tweets
 def get_tweets(username):
@@ -132,7 +83,7 @@ def get_tweets(username):
                     for word in keywords:
                         if word in text:
 
-                            if not ("RT @") in text:
+                            if not ("rt @") in text:
 
                                 print ("Keyword(s) found tweet has been added to retweet_list.txt")
                                 user = username.replace('\n', '').replace('\r', '')
