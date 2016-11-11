@@ -2,6 +2,12 @@
 [Tt]humbs.db
 *.DS_Store
 
+#Git Specific files
+*keywords.txt
+*retweet_list.txt
+*tweet_id_cachelist.txt
+
+
 #System backup files
 *~
 
