@@ -15,10 +15,8 @@
 
 # 2do # search ALL keywords first, then decide whether or not to retweet... +1 for each found word then retweet if 0?
 
-# 2d0 # note triggering keyword(s) in a separate text file - useful to see what keywords are most effective, common, etc?
-
 # 2do # inspect why certain rt's were retweeted, for example: https://twitter.com/cat803/status/791877532274470912
-# 2do # why are some RTs are still getting through...?
+# (maybe fixed?)
 
 # 2do # manipulate keywords var to be lowercase so to allow users to enter any case variation
 
@@ -48,16 +46,6 @@ number_of_tweets = 20 #reruns
 with open(os.path.expanduser('~') + '/.GITS/users-specific_topical_retweeter/keywords.txt', 'r') as keywordfile:
     keywords = keywordfile.read().splitlines()
 
-##NOW. IMPORTANT STEP. Add your keywords to a new keywords.txt file in lowercase
-##To create and edit:
-#touch ~/.GITS/users-specific_topical_retweeter/keywords.txt
-#open ~/.GITS/users-specific_topical_retweeter/keywords.txt
-##Then put each word you want to include on its own line, e.g.:
-##climatechange
-##climate
-##globalwarming
-##climate
-
 #method to get a user's last # tweets
 def get_tweets(username):
 
@@ -84,16 +72,15 @@ def get_tweets(username):
                     # Make tweet all lowercase
                     text = tweet.text.encode("utf-8").lower()
 
-                    if "rt @" in text:
-						pass
+                    if not "rt @" in text:
 
-                    for word in keywords:
-                        if word in text:
+                        for word in keywords:
+                            if word in text:
 
                                 print ("Keyword(s) found tweet has been added to retweet_list.txt")
                                 user = username.replace('\n', '').replace('\r', '')
 
-                                #Preserve tweet link in word doc
+                                #Preserve tweet link in text doc
                                 tweetable = "https://twitter.com/"+user+"/status/"+tweet.id_str + "\n"
                                 #print(tweet.text.encode("utf-8"))
                                 #print(tweetable)
