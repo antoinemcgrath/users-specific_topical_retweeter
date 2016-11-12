@@ -13,9 +13,12 @@
 
 # 2do # Reduce tweet list file automatically
 
-# 2do # search ALL keywords first, then decide whether or not to retweet... +1 for each found work then retweet if >1?
+# 2do # search ALL keywords first, then decide whether or not to retweet... +1 for each found word then retweet if 0?
+
+# 2d0 # note triggering keyword(s) in a separate text file - useful to see what keywords are most effective, common, etc?
 
 # 2do # inspect why certain rt's were retweeted, for example: https://twitter.com/cat803/status/791877532274470912
+# 2do # why are some RTs are still getting through...?
 
 # 2do # manipulate keywords var to be lowercase so to allow users to enter any case variation
 
@@ -38,14 +41,14 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_key, access_secret)
 api = tweepy.API(auth)
 
-#number = 200 #initial run
+#set count to however many tweets you want; twitter only allows max 200 at once
+#number_of_tweets = 200 #initial run
 number_of_tweets = 20 #reruns
 
 with open(os.path.expanduser('~') + '/.GITS/users-specific_topical_retweeter/keywords.txt', 'r') as keywordfile:
     keywords = keywordfile.read().splitlines()
 
-##Add your keywords to a new keywords file in lowercase
-
+##NOW. IMPORTANT STEP. Add your keywords to a new keywords.txt file in lowercase
 ##To create and edit:
 #touch ~/.GITS/users-specific_topical_retweeter/keywords.txt
 #open ~/.GITS/users-specific_topical_retweeter/keywords.txt
@@ -57,9 +60,6 @@ with open(os.path.expanduser('~') + '/.GITS/users-specific_topical_retweeter/key
 
 #method to get a user's last # tweets
 def get_tweets(username):
-
-#    #set count to however many tweets you want; twitter only allows max 200 at once
-#    number_of_tweets = number
 
     #get tweets
     tweets = api.user_timeline(screen_name = username,count = number_of_tweets)
