@@ -16,6 +16,7 @@
 
 # 2do # keywords alphabetical. keywords on same line where they are variations of same word
 # 2do # manipulate keywords var to be lowercase so to allow users to enter any case variation
+
 import sys
 import os
 import tweepy #http://www.tweepy.org/
@@ -36,17 +37,17 @@ auth.set_access_token(access_key, access_secret)
 api = tweepy.API(auth)
 
 #number = 200 #initial run
-number = 200 #reruns
+number_of_tweets = 20 #reruns
 
 with open(os.path.expanduser('~') + '/.GITS/users-specific_topical_retweeter/keywords.txt', 'r') as keywordfile:
     keywords = keywordfile.read().splitlines()
 
 ##Add your keywords to a new keywords file in lowercase
-##Example
-##To create and edit
+
+##To create and edit:
 #touch ~/.GITS/users-specific_topical_retweeter/keywords.txt
 #open ~/.GITS/users-specific_topical_retweeter/keywords.txt
-##Then put each word you want to include on its own line
+##Then put each word you want to include on its own line, e.g.:
 ##climatechange
 ##climate
 ##globalwarming
@@ -55,8 +56,8 @@ with open(os.path.expanduser('~') + '/.GITS/users-specific_topical_retweeter/key
 #method to get a user's last # tweets
 def get_tweets(username):
 
-    #set count to however many tweets you want; twitter only allows max 200 at once
-    number_of_tweets = number
+#    #set count to however many tweets you want; twitter only allows max 200 at once
+#    number_of_tweets = number
 
     #get tweets
     tweets = api.user_timeline(screen_name = username,count = number_of_tweets)
