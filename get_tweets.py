@@ -8,13 +8,15 @@
 #python3 ~/.GITS/users-specific_topical_retweeter/get_tweets.py ~/.GITS/users-specific_topical_retweeter/representatives_twitter_accounts.txt
 
 # 2do # Create crontab regular execution of script http://www.computerhope.com/unix/ucrontab.htm
-# 2do # Automate the switch from initial run of 200 tweets to maintenance 20 tweet reruns
-# 2do # Reduce tweet list file automatically
-# 2do # TEST put RT search first? then...
-	  # search ALL keywords first, then decide whether or not to retweet... +1 for each found work then retweet if >1?
-      # 2do # inspect why certain rt's were retweeted, for example: https://twitter.com/cat803/status/791877532274470912
 
-# 2do # keywords alphabetical. keywords on same line where they are variations of same word
+# 2do # Automate the switch from initial run of 200 tweets to maintenance 20 tweet reruns
+
+# 2do # Reduce tweet list file automatically
+
+# 2do # search ALL keywords first, then decide whether or not to retweet... +1 for each found work then retweet if >1?
+
+# 2do # inspect why certain rt's were retweeted, for example: https://twitter.com/cat803/status/791877532274470912
+
 # 2do # manipulate keywords var to be lowercase so to allow users to enter any case variation
 
 import sys
@@ -82,10 +84,11 @@ def get_tweets(username):
                     # Make tweet all lowercase
                     text = tweet.text.encode("utf-8").lower()
 
+                    if "rt @" in text:
+						pass
+
                     for word in keywords:
                         if word in text:
-
-                            if not ("rt @") in text:
 
                                 print ("Keyword(s) found tweet has been added to retweet_list.txt")
                                 user = username.replace('\n', '').replace('\r', '')
