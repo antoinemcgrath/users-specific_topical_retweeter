@@ -129,9 +129,13 @@ with open(sys.argv[1], 'r') as userfile:
                 print ("Twitter rate limit exceeded pausing for 1 hr")
                 import time
                 time.sleep(3601)
-
+            if "Max retries exceeded" in str(e.reason):
+                print ("Twitter rate limit exceeded pausing for 1 hr")
+                import time
+                time.sleep(3601)
             if e.api_code == 34:
                 print ("error   The account does not exist: https://twitter.com/" + username)
+
             else:
                 print ("Tweepy error code: " + str(e.api_code) + "  " + str(tweepy.error.TweepError))
                 print (e.reason)
