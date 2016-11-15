@@ -53,6 +53,6 @@ gitignore/
 
 
 #Specific files to ignore
-keywords.txt
-retweet_list.txt
-tweet_id_cachelist.txt
+*keywords.txt
+*retweet_list.txt
+*tweet_id_cachelist.txt

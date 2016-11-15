@@ -77,7 +77,7 @@ def get_tweets(username):
 
 					# Make sure it's not a retweet
                     if not "rt @" in text:
-						
+
 						# Cycle through keywords
                         for word in keywords:
 							# If the tweet contains a keyword...
