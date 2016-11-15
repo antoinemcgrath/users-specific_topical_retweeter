@@ -24,6 +24,18 @@ cd ~/.GITS
 git clone git@github.com:antoinemcgrath/users-specific_topical_retweeter.git
 open ~/.GITS/users-specific_topical_retweeter
 
+You’ll also want to create a keywords file.
+To create and edit:
+touch ~/.GITS/users-specific_topical_retweeter/keywords.txt
+open ~/.GITS/users-specific_topical_retweeter/keywords.txt
+
+Then put each word you want to include on its own line IN LOWERCASE, e.g.:
+climate
+climatechange
+climate change
+globalwarming
+global warming
+
 If you do not have tweepy installed:
 pip install tweepy
 If the tweepy install fails bc you do not have pip installed, then first install pip:
