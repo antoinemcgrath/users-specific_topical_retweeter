@@ -19,6 +19,25 @@
 
 # 2do # manipulate keywords var to be lowercase so to allow users to enter any case variation
 
+#Update to follow lists rather than individuals (will require an updated retweet detector, but consume less API requests)
+#http://stackoverflow.com/questions/39171301/tweepy-getting-the-author-of-a-retweeted-tweet
+#http://stackoverflow.com/questions/27095950/tweepy-finding-the-original-author-of-a-retweet
+
+
+#https://twitter.com/tweetcongress/lists/senate
+#https://twitter.com/tweetcongress/lists/republican
+#https://twitter.com/tweetcongress/lists/congress
+#https://twitter.com/tweetcongress/lists/house-committee
+#https://twitter.com/richarda/lists/top-50-us-politics
+#https://twitter.com/verified/lists/us-congress
+#https://twitter.com/gov/lists/us-house
+#https://twitter.com/gov/lists/us-senate
+#https://twitter.com/gov/lists/us-cabinet
+#https://twitter.com/gov/lists/us-governors
+#https://twitter.com/gov/lists/presidential-candidates
+#https://twitter.com/gov/lists/us-secretaries-of-state
+#https://twitter.com/gov/lists/us-senate
+
 import sys
 import os
 import tweepy #http://www.tweepy.org/
@@ -38,8 +57,8 @@ auth.set_access_token(access_key, access_secret)
 api = tweepy.API(auth)
 
 # Set count to however many tweets you want; Twitter only allows max 200 at once
-#number_of_tweets = 200 #initial run
-number_of_tweets = 20 #reruns
+number_of_tweets = 200 #initial run
+#number_of_tweets = 20 #reruns
 
 with open(os.path.expanduser('~') + '/.GITS/users-specific_topical_retweeter/keywords.txt', 'r') as keywordfile:
     keywords = keywordfile.read().splitlines()
