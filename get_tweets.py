@@ -1,10 +1,15 @@
+/mnt/8TB/GITS/users-specific_topical_retweeter/get_tweets.py /mnt/8TB/GITS/users-specific_topical_retweeter/representatives_twitter_accounts.txt
+
+
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # PROPOSED BY THE BRAIN OF Gennie https://github.com/gegebhart
 # BUILT ON TWEEPY CODE POSTED BY GITLAURA: https://github.com/gitlaura/get_tweets/blob/master/get_tweets.py
 
 #cd ~/.GITS/users-specific_topical_retweeter/
-#python3 ~/.GITS/users-specific_topical_retweeter/get_tweets.py ~/.GITS/users-specific_topical_retweeter/representatives_twitter_accounts.txt
+#python2 ~/.GITS/users-specific_topical_retweeter/get_tweets.py ~/.GITS/users-specific_topical_retweeter/representatives_twitter_accounts.txt
+
 
 # 2do # Create crontab regular execution of script http://www.computerhope.com/unix/ucrontab.htm
 
@@ -76,7 +81,7 @@ def get_tweets(username):
     for tweet in tweets:
 
 		# Check to see if you have already scanned it
-        with open("tweet_id_cachelist.txt", 'r') as cachefile:
+        with open("/.GITS/users-specific_topical_retweeter/tweet_id_cachelist.txt", 'r') as cachefile:
             cachelist = cachefile.read()
             result = cachelist.find(tweet.id_str)
             #print(tweet.id_str)
